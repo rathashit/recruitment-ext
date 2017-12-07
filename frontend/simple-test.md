@@ -60,7 +60,8 @@ class SomeListComponent extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ items: nextProps.items })
+    if (nextProps.items !== this.props.items)
+      this.setState({ items: nextProps.items })
   }
 
   handleClick => index { this.props.onClick(index) }
